@@ -10,3 +10,11 @@ openssl x509 -req -in zach_ex.csr -CA D:\scripts\kubernetes\test\CA\k8x_ca\ca.pe
 openssl genrsa -out test.key 2048
 openssl req -new -key test.key -out test.csr -subj "/CN=test/O=maintainer"
 openssl x509 -req -in test.csr -CA D:\scripts\kubernetes\test\CA\k8x_ca\fail\ca_fail.pem -CAkey D:\scripts\kubernetes\test\CA\k8x_ca\fail\ca-key_fail.pem -CAcreateserial -out test.crt -days 500
+
+
+3. print crt
+openssl x509 -text -in D:\scripts\kubernetes\K8s-Self-Test\CA\k8x_ca\ca.pem -o noout
+openssl x509 -text -in D:\scripts\kubernetes\K8s-Self-Test\CA\gen_ca\zach_ex.crt -noout
+
+4. print csr
+openssl req -text -in D:\scripts\kubernetes\K8s-Self-Test\CA\gen_ca\zach_ex.csr -noout
