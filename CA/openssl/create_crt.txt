@@ -18,3 +18,6 @@ openssl x509 -text -in D:\scripts\kubernetes\K8s-Self-Test\CA\gen_ca\zach_ex.crt
 
 5. print csr
 openssl req -text -in D:\scripts\kubernetes\K8s-Self-Test\CA\gen_ca\zach_ex.csr -noout
+
+6. print key
+openssl rsa -text -in zach_ex.key -noout
