@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+   name: helloworld-grafana-ingress
+   namespace: zach-test
+spec:
+   rules:
+   - host: helloworld.example.com
+     http:
+       paths:
+       - path: /
+         backend:
+           serviceName: helloworld-deployment-service
+           servicePort: 3000
+   - host: grafana.example.com
+     http:
+       paths:
+       - path: /
+         backend:
+           serviceName: zach-grafana
+           servicePort: 80

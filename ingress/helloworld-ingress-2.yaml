@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+   name: helloworld-ingress-2
+   namespace: zach-test
+spec:
+   rules:
+   - http:
+       paths:
+       - path: /helloworld-ingress
+         backend:
+           serviceName: helloworld-service
+           servicePort: 3000

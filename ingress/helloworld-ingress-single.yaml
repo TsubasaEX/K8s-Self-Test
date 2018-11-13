@@ -1,0 +1,9 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+   name: helloworld-ingress
+   namespace: zach-test
+spec:
+  backend:
+    serviceName: helloworld-service
+    servicePort: 80

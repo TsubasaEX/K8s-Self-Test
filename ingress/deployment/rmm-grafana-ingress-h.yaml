@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+   name: rmm-grafana-ingress-h
+   namespace: zach-test
+spec:
+   rules:
+   - host: portal.rmm.example.com
+     http:
+       paths:
+       - path: /
+         backend:
+           serviceName: zach-rmm-portal
+           servicePort: 8080
+   - host: portal.grafana.example.com
+     http:
+       paths:
+       - path: /
+         backend:
+           serviceName: zach-grafana
+           servicePort: 80

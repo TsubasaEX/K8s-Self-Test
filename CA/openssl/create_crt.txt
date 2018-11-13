@@ -1,0 +1,12 @@
+1. create crt
+openssl genrsa -out zach_ex.key 2048
+openssl req -new -key zach_ex.key -out zach_ex.csr -subj "/CN=zach_ex/O=maintainer"
+openssl x509 -req -in zach_ex.csr -CA D:\scripts\kubernetes\test\CA\k8x_ca\ca.pem -CAkey D:\scripts\kubernetes\test\CA\k8x_ca\ca-key.pem -CAcreateserial -out zach_ex.crt -days 500
+
+
+
+
+2. failure example from modified pem files -> outcome: unauthorized
+openssl genrsa -out test.key 2048
+openssl req -new -key test.key -out test.csr -subj "/CN=test/O=maintainer"
+openssl x509 -req -in test.csr -CA D:\scripts\kubernetes\test\CA\k8x_ca\fail\ca_fail.pem -CAkey D:\scripts\kubernetes\test\CA\k8x_ca\fail\ca-key_fail.pem -CAcreateserial -out test.crt -days 500

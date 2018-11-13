@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+   name: helloworld-pod-ingress-3
+   namespace: zach-test
+spec:
+   rules:
+   - host: helloworld.example.com
+     http:
+       paths:
+       - path: /
+         backend:
+           serviceName: helloworld-pod-service
+           servicePort: 3000

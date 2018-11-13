@@ -1,0 +1,27 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+   name: rmm-mongo-rabbitmq-ingress
+spec:
+   rules:
+   - host: portal.rmm.example.com
+     http:
+       paths:
+       - path: /
+         backend:
+           serviceName: dev-rmm-portal
+           servicePort: 8080
+   - host: portal.mongo-express.example.com
+     http:
+       paths:
+       - path: /
+         backend:
+           serviceName: dev-mongo-express
+           servicePort: 8081
+   - host: portal.rabbitmq.example.com
+     http:
+       paths:
+       - path: /
+         backend:
+           serviceName: dev-rmq-rabbitmq-ha
+           servicePort: 15672

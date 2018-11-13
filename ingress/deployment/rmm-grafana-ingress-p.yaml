@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+   name: rmm-grafana-ingress-p
+   namespace: zach-test
+   annotations:
+     nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+   rules:
+   - host: portal.example.com
+     http:
+       paths:
+       - path: /rmm
+         backend:
+           serviceName: zach-rmm-portal
+           servicePort: 8080
+       - path: /grafana
+         backend:
+           serviceName: zach-grafana
+           servicePort: 80

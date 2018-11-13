@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Config
+preferences: {}
+
+clusters:
+- cluster:
+  name: development
+
+users:
+- name: developer
+- name: guest
+
+contexts:
+- context:
+  name: dev-default
+- context:
+  name: dev-nginx
+- context:
+  name: guest-default

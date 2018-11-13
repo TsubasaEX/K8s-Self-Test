@@ -1,0 +1,9 @@
+kubectl get service zach-nginx-nginx-ingress-controller -n zach-nginx-ingress -o yaml
+
+helm install --name zach-nginx -f C:\Users\zach.chih\.helm\cache\archive\nginx-ingress\myvalues_tcp.yaml stable/nginx-ingress --namespace zach-nginx-ingress
+helm upgrade zach-nginx stable/nginx-ingress -f C:\Users\zach.chih\.helm\cache\archive\nginx-ingress\myvalues_tcp.yaml
+
+kubectl patch service demo-nginx-nginx-ingress-controller -n nginx-ingress -p "{\"spec\":{\"ports\":[{\"port\":1883,\"nodePort\":1883}]}}"
+kubectl patch service zach-nginx-nginx-ingress-controller -n zach-nginx-ingress -p "{\"spec\":{\"ports\":[{\"port\":5000,\"nodePort\":5000},{\"port\":20000,\"nodePort\":20000}]}}"
+kubectl patch service zach-nginx-nginx-ingress-controller -n zach-nginx-ingress -p "{\"spec\":{\"ports\":[{\"port\":5000,\"nodePort\":5000},{\"port\":20000,\"nodePort\":20000},{\"port\":1883,\"nodePort\":1883}]}}"
+kubectl patch service zach-nginx-nginx-ingress-controller -n zach-nginx-ingress -p "{\"spec\":{\"ports\":[{\"port\":5000,\"nodePort\":5000},{\"port\":20000,\"nodePort\":20000},{\"port\":1883,\"nodePort\":1883},{\"port\":8000,\"nodePort\":8000}]}}"
