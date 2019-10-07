@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <testsuite tests="1" failures="1" time="902.161396428">
+      <testcase name="BeforeSuite" classname="Kubernetes e2e suite" time="902.16116451">
+          <failure type="Failure">/workspace/anago-v1.11.3-beta.0.71+a4529464e4629c/src/k8s.io/kubernetes/_output/dockerized/go/src/k8s.io/kubernetes/test/e2e/e2e.go:140&#xA;Oct  4 06:51:33.188: Error waiting for all pods to be running and ready: 1 / 11 pods in namespace &#34;kube-system&#34; are NOT in RUNNING and READY state in 10m0s&#xA;POD                      NODE PHASE   GRACE CONDITIONS&#xA;coredns-7c949f49d5-p6f2z      Pending       [{Type:PodScheduled Status:False LastProbeTime:0001-01-01 00:00:00 +0000 UTC LastTransitionTime:2019-05-15 03:24:15 +0000 UTC Reason:Unschedulable Message:0/1 nodes are available: 1 node(s) didn&#39;t match pod affinity/anti-affinity, 1 node(s) didn&#39;t satisfy existing pods anti-affinity rules.}]&#xA;&#xA;/workspace/anago-v1.11.3-beta.0.71+a4529464e4629c/src/k8s.io/kubernetes/_output/dockerized/go/src/k8s.io/kubernetes/test/e2e/e2e.go:193</failure>
+      </testcase>
+  </testsuite>
