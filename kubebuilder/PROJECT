@@ -1,0 +1,7 @@
+version: "2"
+domain: zking.io
+repo: zkingmod
+resources:
+- group: zachgroup
+  version: v1
+  kind: ZombieKing

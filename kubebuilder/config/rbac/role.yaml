@@ -1,0 +1,28 @@
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - zachgroup.zking.io
+  resources:
+  - zombiekings
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - zachgroup.zking.io
+  resources:
+  - zombiekings/status
+  verbs:
+  - get
+  - patch
+  - update

@@ -1,0 +1,8 @@
+apiVersion: zachgroup.zking.io/v1
+kind: ZombieKing
+metadata:
+  name: zombieking-sample
+spec:
+  # Add fields here
+  foo: bar
+  type: zombie
